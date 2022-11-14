@@ -1,5 +1,10 @@
 {
   "name": "demo-api-frontend",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "4.0.0",
+    "bootstrap-icons": "^1.10.2",
+    "jquery": "^3.6.1",
+    "popper.js": "^1.16.1"
+  }
 }

@@ -1,0 +1,62 @@
+<div>
+  <div class="input-group w-25 mb-5">
+    <input class="form-control py-2 border-right-0 border" type="search"
+    value="" placeholder="Search Tutor" id="example-search-input">
+    <span class="input-group-append">
+        <div class="input-group-text bg-transparent"><i class="fa fa-search"></i></div>
+    </span>
+  </div>
+  <h2>
+    Online Tutors
+  </h2>
+</div>
+<div class="card-columns mt-4">
+  <% @response_body['users'].each do |user| %>
+    <div class="card border-dark">
+      <div class="card-body">
+        <div class="d-flex justify-content-between">
+          <div class="d-flex">
+            <div class="avatar">
+              <img src="https://www.w3.org/2006/05/u/1682ihk1hqqo-sm.jpg"
+              width="40" height="50" class="rounded-circle">
+            </div>
+            <div class="ml-2">
+              <div class="pt-2">
+                <%= user['full_name'].titleize %>
+              </div>
+              <div>
+                <b><%= user['address'] || 'Unknown'%></b>
+              </div>
+            </div>
+          </div>
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="<%= user['color'] || 'red' %>" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                <circle cx="8" cy="8" r="8"/>
+              </svg>
+          </div>
+        </div>
+
+        <div class="mt-5">
+          <div class="d-flex justify-content-between">
+            <div class="p-1">
+              <button type="button" class="btn btn-light" style="border-radius: 12px;">Call Now</button>
+            </div>
+            <div>
+              <div class="p-1">
+                <button type="button" class="btn btn-light" style="border-radius: 12px;">
+                  <%= get_teachings user['teachings'] %> Teachings
+                </button>
+            </div>
+            <div class="float-right">
+              <% [*1..5].each do |num|%>
+              <span class="fa fa-star pr-1 <%= "checked" if user['ratings'].to_i >= num %>"></span>
+              <% end %>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <% end %>
+</div>
+

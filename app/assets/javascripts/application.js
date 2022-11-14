@@ -13,3 +13,5 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+import 'bootstrap';
+import 'bootstrap-icons/font/bootstrap-icons.css'

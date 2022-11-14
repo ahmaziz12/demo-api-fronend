@@ -6,10 +6,19 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="wrapper d-flex">
+      <div class="sidebar">
+        <%= render 'shared/sidebar.html.erb'%>
+      </div>
+      <div class="pl-5">
+        <%= render 'shared/header' %>
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

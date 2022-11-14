@@ -12,4 +12,12 @@
  *
  *= require_tree .
  *= require_self
+  *= require flags/basic
+ *= require flags/flags64
  */
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome";
+
+.checked {
+  color: orange;
+}
